@@ -1,0 +1,246 @@
+
+    @import url(https://fonts.googleapis.com/css?family=Raleway:100,500,900);
+@-webkit-keyframes flip-top {
+  from {
+    -webkit-transform: rotate(50deg) translateY(120vh);
+            transform: rotate(50deg) translateY(150vh);
+  }
+}
+@keyframes flip-top {
+  from {
+    -webkit-transform: rotate(50deg) translateY(120vh);
+            transform: rotate(50deg) translateY(150vh);
+  }
+}
+@-webkit-keyframes flip-bottom {
+  from {
+    -webkit-transform: rotate(-50deg) translateY(120vh);
+            transform: rotate(-50deg) translateY(150vh);
+  }
+}
+@keyframes flip-bottom {
+  from {
+    -webkit-transform: rotate(-50deg) translateY(120vh);
+            transform: rotate(-50deg) translateY(150vh);
+  }
+}
+body {
+    position: absolute;
+    left: 50vh;
+    top: 20vh;
+  height: 50vh;
+  overflow: hidden;
+  background: #000;
+  -webkit-animation: glow 8s both;
+          animation: glow 8s both;
+}
+
+span {
+  font: 900 15vw Raleway;
+  position: relative;
+  display: inline-block;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+}
+span:nth-child(odd):before {
+  -webkit-animation-name: flip-top;
+          animation-name: flip-top;
+}
+span:nth-child(odd):after {
+  -webkit-animation-name: flip-bottom;
+          animation-name: flip-bottom;
+}
+span:nth-child(even):before {
+  -webkit-animation-name: flip-bottom;
+          animation-name: flip-bottom;
+}
+span:nth-child(even):after {
+  -webkit-animation-name: flip-top;
+          animation-name: flip-top;
+}
+span:nth-child(1n + 0):before {
+  color: #4EC0B6;
+}
+span:nth-child(1n + 0):after {
+  color: #4ea4c0;
+}
+span:nth-child(2n + 1):before {
+  color: #3967CB;
+}
+span:nth-child(2n + 1):after {
+  color: #3c39cb;
+}
+span:nth-child(3n + 2):before {
+  color: #FDCD2F;
+}
+span:nth-child(3n + 2):after {
+  color: #e8fd2f;
+}
+span:nth-child(4n + 3):before {
+  color: #E23942;
+}
+span:nth-child(4n + 3):after {
+  color: #e26839;
+}
+span:nth-child(1):before {
+  -webkit-animation-delay: 0.88706s;
+          animation-delay: 0.88706s;
+}
+span:nth-child(1):after {
+  -webkit-animation-delay: 1.32717s;
+          animation-delay: 1.32717s;
+}
+span:nth-child(2):before {
+  -webkit-animation-delay: 1.76318s;
+          animation-delay: 1.76318s;
+}
+span:nth-child(2):after {
+  -webkit-animation-delay: 2.19375s;
+          animation-delay: 2.19375s;
+}
+span:nth-child(3):before {
+  -webkit-animation-delay: 2.61756s;
+          animation-delay: 2.61756s;
+}
+span:nth-child(3):after {
+  -webkit-animation-delay: 3.03328s;
+          animation-delay: 3.03328s;
+}
+span:nth-child(4):before {
+  -webkit-animation-delay: 3.43965s;
+          animation-delay: 3.43965s;
+}
+span:nth-child(4):after {
+  -webkit-animation-delay: 3.8354s;
+          animation-delay: 3.8354s;
+}
+span:nth-child(5):before {
+  -webkit-animation-delay: 4.21932s;
+          animation-delay: 4.21932s;
+}
+span:nth-child(5):after {
+  -webkit-animation-delay: 4.59022s;
+          animation-delay: 4.59022s;
+}
+
+span:before, span:after {
+  display: block;
+  content: attr(data-text);
+  -webkit-animation: 0.88889s ease-out both;
+          animation: 0.88889s ease-out both;
+  -webkit-animation-name: inherit;
+          animation-name: inherit;
+  text-shadow: 0 0 1em;
+}
+span:before {
+  -webkit-clip-path: polygon(0 0 100% 0, 100% 100%);
+  clip-path: polygon(0 0 100% 0, 100% 100%);
+  position: absolute;
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  color: #4EC0B6;
+}
+span:after {
+  -webkit-clip-path: polygon(0 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  color: #3967CB;
+}
+
+@-webkit-keyframes fade{ 
+  0%{
+    opacity:0;        
+  }
+  50%{
+    opacity:1;       
+  }
+  100%{
+    opacity:0;        
+  }
+}
+
+.up:hover,
+.up:focus {
+  box-shadow: inset 0 -3.25em 0 0 var(--hover);
+}
+.down:hover,
+.down:focus{
+  box-shadow: inset 0 3.25em 0 0 var(--hover);
+}
+.slide:hover,
+.slide:focus {
+  box-shadow: inset 6.5em 0 0 0 var(--hover);
+}
+
+
+.up {
+  --color: #33ccff;
+  --hover: #33ccff;
+}
+.down {
+  --color: #ff8000;
+  --hover: #ff8000;
+}
+.slide {
+  --color: #8fc866;
+  --hover: #66c887;
+}
+
+
+button {
+  color: var(--color);
+  transition: 0.25s;
+}
+button:hover, button:focus {
+  border-color: var(--hover);
+  color: #fff;
+}
+
+body {
+  color: #fff;
+  background: #17181c;
+  font: 100 1vw Raleway;
+  position: relative;
+  display: flex;
+}
+
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+h1 {
+    color: white;
+    font: 100 3vw Raleway;
+    position: absolute;
+    left: 15vh;
+    top: 60vh;
+    opacity:0;
+    -webkit-animation: fade 2s infinite ease-in-out;
+    -webkit-animation-delay: 5s; 
+    animation-delay: 5s;
+}
+h2 {
+  font: 100 2vw Raleway;
+  position: fixed;
+  top: 180;
+  left: 500;
+}
+h3 {
+  font: 100 2vw Raleway;
+  position: fixed;
+  top: 390;
+  left: 525;
+}
+h4 {
+    background-color: #FFF;
+    font: 500 2vw Raleway;
+    color: black;
+    position: fixed;
+    top: 20;
+    left: 150;
+}
+
